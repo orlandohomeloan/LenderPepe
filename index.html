@@ -147,102 +147,6 @@
         .fixed.bottom-4.right-4 {
             display: none !important;
         }
-        
-        /* Chat Modal Styles */
-        .chat-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
-            z-index: 100;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .chat-modal-overlay.active {
-            display: flex;
-        }
-        .chat-modal-container {
-            background: white;
-            border-radius: 20px;
-            width: 100%;
-            max-width: 900px;
-            height: 80vh;
-            max-height: 700px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: modalSlideIn 0.3s ease;
-        }
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95) translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-        .chat-modal-header {
-            background: linear-gradient(135deg, #0B3C5D 0%, #1F7A8C 100%);
-            padding: 16px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .chat-modal-title {
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .chat-modal-close {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
-            border: none;
-            color: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
-        .chat-modal-close:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: rotate(90deg);
-        }
-        .chat-modal-iframe {
-            flex: 1;
-            width: 100%;
-            border: none;
-        }
-        .chat-modal-footer {
-            background: #f8fafc;
-            padding: 12px 24px;
-            text-align: center;
-            border-top: 1px solid #e5e7eb;
-        }
-        .chat-modal-footer p {
-            color: #6b7280;
-            font-size: 0.85rem;
-            margin: 0;
-        }
-        
-        /* Mobile responsiveness for modal */
-        @media (max-width: 640px) {
-            .chat-modal-container {
-                height: 90vh;
-                max-height: none;
-                border-radius: 16px;
-            }
-        }
     </style>
 <script src="https://www.kimi.com/sdk-seed.js" defer=""></script></head>
 <body class="bg-white text-pepe-charcoal antialiased">
@@ -574,10 +478,10 @@
                         </div>
                         <h3 class="font-display font-semibold text-xl text-pepe-blue mb-2" data-i18n="chat.title">Chat with Pepe</h3>
                         <p class="text-gray-500 text-sm mb-6 max-w-xs" data-i18n="chat.description">Your trilingual mortgage guide is ready to help.</p>
-                        <button onclick="openChatModal()" class="btn-primary" style="border: none; cursor: pointer;">
+                        <a href="https://chatgpt.com/g/g-67ac2bd46fb48191bb12a994abf3d255-lender-pepe-pepe-the-prestamista" target="_blank" rel="noopener noreferrer" class="btn-primary" onclick="trackChatOpen()">
                             <span data-i18n="chat.openChat">Open Chat</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                        </button>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
                     </div>
                     
                     <!-- Input area (decorative) -->
@@ -712,10 +616,10 @@
             <p class="text-white/70 text-lg mb-8 max-w-2xl mx-auto" data-i18n="footer.subheadline">
                 Get clear answers in English, Spanish, or Portuguese. No signup required.
             </p>
-            <button onclick="openChatModal()" class="inline-flex items-center gap-2 bg-pepe-gold text-white font-semibold px-8 py-4 rounded-xl hover:bg-pepe-gold/90 transition-all hover:scale-105" style="border: none; cursor: pointer;">
+            <a href="https://chatgpt.com/g/g-67ac2bd46fb48191bb12a994abf3d255-lender-pepe-pepe-the-prestamista" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-pepe-gold text-white font-semibold px-8 py-4 rounded-xl hover:bg-pepe-gold/90 transition-all hover:scale-105" onclick="trackChatOpen()">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                 <span data-i18n="footer.cta">Chat with Pepe</span>
-            </button>
+            </a>
         </div>
     </section>
 
@@ -990,60 +894,12 @@
         }
     </script>
 
-    <!-- Chat Modal -->
-    <div id="chatModal" class="chat-modal-overlay" onclick="closeChatModal(event)">
-        <div class="chat-modal-container" onclick="event.stopPropagation()">
-            <div class="chat-modal-header">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-pepe-gold flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                    </div>
-                    <span class="chat-modal-title">Pepe the Prestamista</span>
-                </div>
-                <button class="chat-modal-close" onclick="closeChatModal()" aria-label="Close chat">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <iframe 
-                id="chatIframe"
-                class="chat-modal-iframe"
-                src=""
-                title="Chat with Pepe"
-                allow="fullscreen"
-            ></iframe>
-            <div class="chat-modal-footer">
-                <p>Pepe is an AI assistant for educational purposes only. Not financial advice.</p>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Chat Modal Functions
-        function openChatModal() {
-            const modal = document.getElementById('chatModal');
-            const iframe = document.getElementById('chatIframe');
-            iframe.src = 'https://chatgpt.com/g/g-67ac2bd46fb48191bb12a994abf3d255-lender-pepe-pepe-the-prestamista';
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Track when chat is opened (for analytics)
+        function trackChatOpen() {
+            // You can add analytics tracking here later
+            console.log('Chat opened');
         }
-        
-        function closeChatModal(event) {
-            if (event && event.target !== document.getElementById('chatModal') && event.target.closest('.chat-modal-close') === null) {
-                return;
-            }
-            const modal = document.getElementById('chatModal');
-            const iframe = document.getElementById('chatIframe');
-            modal.classList.remove('active');
-            iframe.src = '';
-            document.body.style.overflow = '';
-        }
-        
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeChatModal();
-            }
-        });
     </script>
 
 </body></html>
